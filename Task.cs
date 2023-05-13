@@ -28,19 +28,29 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
-// void CountOfPositiveNumbers(int[]array)
-// {
-//     int count = 0;
-//     for (int i = 0; i < array.Length; i++)
-//     {
-//         if (array[i] > 0)
-//         count++;
-//     }
-// Console.WriteLine("Количество чисел больше 0: " + count);
-// Console.WriteLine();
-//add methods Input , CreateArray,  FillByUser,  PrintArray
-// }
+void ResultArray(string []array)
+{
+    int lenResultArray = 0;
+    for (int i = 0; i <= array.Length - 1; i++)
+    {
+        if (array[i].Length <= 3) lenResultArray++;
+    }
+
+    string[] resultArray = new string[lenResultArray];
+    int index = 0;
+
+    for (int i = 0; i <= array.Length - 1; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            resultArray[index] = array[i];
+            index++;
+        }
+    }
+PrintArray(resultArray);
+}
 
 string [] arr = CreateArray();
 FillByUser(arr);
 PrintArray(arr);
+ResultArray(arr);
